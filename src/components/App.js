@@ -1,13 +1,13 @@
 import React from 'react';
-import {BrowserRouter, NavLink, Route} from 'react-router-dom';
+import {BrowserRouter, Link, Route} from 'react-router-dom';
 import './App.css';
 
 const PageOne = () => {
   return <div>
     <h2>Page One</h2>
-    <NavLink to={'/pagetwo'}>
+    <Link to={'/pagetwo'}>
       <button>Take me to Page Two</button>
-    </NavLink>
+    </Link>
   </div>
 };
 
@@ -15,9 +15,10 @@ const PageOne = () => {
 const PageTwo = () => {
   return (
     <div>
-      <NavLink to={'/'}>
+      <h2>Page Two</h2>
+      <Link to={'/'}>
         <button>Take me back</button>
-      </NavLink>
+      </Link>
     </div>
   )
 };
@@ -27,7 +28,7 @@ const App = () => {
     <div>
       <BrowserRouter>
         <div>
-          <Route path={'/'} component={PageOne}/>
+          <Route path={'/'} exact component={PageOne}/>
           <Route path={'/pagetwo'} component={PageTwo}/>
         </div>
       </BrowserRouter>
