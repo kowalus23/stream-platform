@@ -1,8 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import {Provider} from 'react-redux';
+import {createStore} from 'redux';
 import App from './components/App';
+import reducers from './reducers'
 
-// const OAuthKEY = '942057131018-h29uu9ch72m973j2t0esurgn2tjo35o0.apps.googleusercontent.com';
+const store = createStore(reducers);
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <Provider stpore={store}>
+    <App/>
+  </Provider>
+  , document.getElementById('root'));
