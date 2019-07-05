@@ -12,12 +12,8 @@ class StreamList extends React.Component {
     if (stream.userId === this.props.currentUserId) {
       return (
         <div className="right floated content">
-          <button className="ui button primary">
-            Edit
-          </button>
-          <button className="ui button negative">
-            Delete
-          </button>
+          <Link to={`/streams/edit/${stream.id}`} className="ui button primary">Edit </Link>
+          <Link to={`/streams/delete/${stream.id}`} className="ui button negative">Delete </Link>
         </div>
       )
     }
@@ -40,12 +36,14 @@ class StreamList extends React.Component {
     })
   }
 
-  rednerCreate() {
+  renderCreate() {
     if (this.props.isSignedIn) {
       return (
-        <Link to='/stream/new'>
-          <div>Create New Stream</div>
-        </Link>
+        <div style={{textAlign: 'right'}}>
+          <Link className="ui button primary" to='/streams/new'>
+            Create Stream
+          </Link>
+        </div>
       )
     }
   }
@@ -56,6 +54,7 @@ class StreamList extends React.Component {
       <div className="ui celled list">
         {this.renderList()}
       </div>
+      {this.renderCreate()}
     </div>
   }
 }
