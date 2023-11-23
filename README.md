@@ -1,5 +1,7 @@
 Basic streaming platform (twich like), by using OBS app you can start streaming direct to the app, also you can ADD/EDIT/DELETE new streams, see the list of already created (currently based on json server db) Really simple but with huge potential to extend possibilities and make it bigger.
 
+
+
 This project needs separated server for DB: for example JSON server: https://github.com/typicode/json-server<br>
 Also it needs media streaming server, i used: https://github.com/illuspas/Node-Media-Server<br>
 At the end we need to download: https://obsproject.com/ and configure it a bit:
