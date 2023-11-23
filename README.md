@@ -7,6 +7,7 @@ Settings->Stream->
 - Service: (Custom..)
 - Server: rtmp://localhost/live
 - Stream Key: STREAM_NAME (in my example it's 1 like ID)
+- 
 
 ## Available Scripts
 
